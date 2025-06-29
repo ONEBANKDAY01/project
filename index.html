@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>แผ่นฟิล์มสมุนไพร</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       body {
         font-family: "Kanit", sans-serif;
@@ -11,11 +12,16 @@
         text-align: center;
       }
 
+      h2 {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+      }
+
       .film-container {
         perspective: 1000px;
         width: 100%;
-        max-width: 300px;
-        height: 300px;
+        max-width: 350px;
+        height: 350px;
         margin: auto;
       }
 
@@ -23,11 +29,12 @@
         width: 100%;
         height: 100%;
         border: 6px solid orange;
-        background-color: rgba(255, 204, 102, 0.4);
+        background-color: rgba(255, 204, 102, 0.5);
         animation: spin 10s linear infinite;
         transform-style: preserve-3d;
         cursor: pointer;
-        border-radius: 20px;
+        border-radius: 16px;
+        box-shadow: 0 4px 20px rgba(255, 165, 0, 0.3);
       }
 
       @keyframes spin {
@@ -44,39 +51,42 @@
         margin-top: 25px;
         background-color: #fffde0;
         border: 1px solid #ccc;
-        padding: 20px;
+        padding: 25px;
         max-width: 90%;
-        width: 400px;
+        width: 450px;
         margin-left: auto;
         margin-right: auto;
         box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
         text-align: left;
         border-radius: 12px;
-        font-size: 1.1rem;
+        font-size: 1.15rem;
+        line-height: 1.6;
       }
 
       .info-box h3 {
         color: #e87f00;
         margin-top: 0;
-        font-size: 1.5rem;
+        font-size: 1.6rem;
       }
 
       .label {
-        margin-top: 10px;
+        margin-top: 12px;
         color: #333;
         font-weight: bold;
       }
 
-      @media (max-width: 500px) {
-        .film-container {
-          max-width: 200px;
-          height: 200px;
+      @media (max-width: 480px) {
+        h2 {
+          font-size: 1.3rem;
         }
-
+        .film-container {
+          max-width: 260px;
+          height: 260px;
+        }
         .info-box {
           font-size: 1rem;
+          padding: 18px;
         }
-
         .info-box h3 {
           font-size: 1.3rem;
         }
@@ -84,7 +94,7 @@
     </style>
   </head>
   <body>
-    <h2 style="font-size: 1.5rem">คลิกที่แผ่นฟิล์มเพื่อดูข้อมูล</h2>
+    <h2>คลิกที่แผ่นฟิล์มเพื่อดูข้อมูล</h2>
 
     <div class="film-container">
       <div class="film-box" onclick="toggleInfo()"></div>
