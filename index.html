@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <title>แผ่นฟิล์มสมุนไพร</title>
+    <style>
+      body {
+        font-family: "Kanit", sans-serif;
+        background-color: #fefcf2;
+        padding: 50px;
+        text-align: center;
+      }
+
+      .film-container {
+        perspective: 1000px;
+        width: 200px;
+        height: 200px;
+        margin: auto;
+      }
+
+      .film-box {
+        width: 200px;
+        height: 200px;
+        border: 4px solid orange;
+        background-color: rgba(255, 204, 102, 0.4);
+        animation: spin 10s linear infinite;
+        transform-style: preserve-3d;
+        cursor: pointer;
+      }
+
+      @keyframes spin {
+        from {
+          transform: rotateY(0deg);
+        }
+        to {
+          transform: rotateY(360deg);
+        }
+      }
+
+      .info-box {
+        display: none;
+        margin-top: 20px;
+        background-color: #fffde0;
+        border: 1px solid #ccc;
+        padding: 20px;
+        width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+        text-align: left;
+      }
+
+      .info-box h3 {
+        color: #e87f00;
+        margin-top: 0;
+      }
+
+      .label {
+        margin-top: 10px;
+        color: #333;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>คลิกที่แผ่นฟิล์มเพื่อดูข้อมูล</h2>
+
+    <div class="film-container">
+      <div class="film-box" onclick="toggleInfo()"></div>
+    </div>
+
+    <div class="info-box" id="info">
+      <h3>แผ่นฟิล์มสมุนไพร</h3>
+      <div class="label">สารสกัดจากว่านหางจระเข้</div>
+      - Aloin, Aloeverin, Acemannan, Vitamin A, C, E
+      <br />
+      <br />
+      <div class="label">สารสกัดจากขมิ้นชัน</div>
+      - Curcumin, Demethoxycurcumin, Bisdemethoxycurcumin
+      <br />
+      - Turmerone, Zingiberene
+    </div>
+
+    <script>
+      function toggleInfo() {
+        const info = document.getElementById("info");
+        info.style.display = info.style.display === "block" ? "none" : "block";
+      }
+    </script>
+  </body>
+</html>
